@@ -1,0 +1,48 @@
+<div class="container">
+  <h1>Desafios Ecológicos</h1>
+
+  <!-- Formulário para adicionar postagens -->
+  <div class="formulario">
+    <h2>Envie seu Desafio</h2>
+    <input type="text" placeholder="Seu nome" [(ngModel)]="nome" />
+    <textarea placeholder="Descrição do desafio" [(ngModel)]="descricao"></textarea>
+
+    <!-- Upload da imagem -->
+    <input type="file" (change)="onImageSelected($event)" accept="image/*" />
+    <div *ngIf="imagem" class="preview">
+      <h4>Pré-visualização da imagem:</h4>
+      <img [src]="imagemUrl" alt="Imagem selecionada">  
+    </div>    
+
+    <button (click)="adicionarPostagem()">Enviar</button>
+  </div>
+
+  <!-- Feed de postagens -->
+  <div class="feed">
+    <h2>Postagens</h2>
+    <div *ngFor="let postagem of postagens" class="postagem">
+      <h3>{{ postagem.nome }}</h3>
+      <p>Data de Criação: {{ postagem.dataCriacao | date: 'dd/MM/yyyy HH:mm' }}</p>
+      <!-- <img *ngIf="postagem.imagem" [src]="'http://localhost:8080/imagens/' + postagem.imagem" alt="Imagem do desafio"> -->
+      <img [src]="'http://localhost:8080' + postagem.imagemUrl" alt="{{ postagem.nome }}" />
+      <p>{{ postagem.descricao }}</p>
+      <span>Pontuação: {{ postagem.pontos }}</span>
+
+      <div class="aviso">
+        <h4>Aviso: Não esqueça de levar este desafio para a escola!</h4>
+        <p>Certifique-se de seguir as etapas abaixo:</p>
+        <ul class="checklist">
+          <li *ngFor="let item of postagem.checkList; let i = index">
+            <input
+              type="checkbox"
+              [checked]="item.feito"
+              (change)="marcarCheckList(postagem, i)"
+            />
+            <label>{{ item.item }}</label>
+          </li>
+        </ul>
+        <button (click)="deletarPostagem(postagem.id)">Excluir</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="activity">
+    <button routerLink="/home">Voltar para Home</button>
+    <h2>Classifique os Resíduos!</h2>
+    <p>Arraste os itens para o tipo de resíduo correto.</p>
+  
+    <div class="materials">
+      <div class="material" draggable="true" (dragstart)="startDrag('plastic')">
+        <img src="https://cdn-icons-png.freepik.com/128/7952/7952183.png" alt="Garrafa Plástica" />
+      </div>
+      <div class="material" draggable="true" (dragstart)="startDrag('organic')">
+        <img src="https://cdn-icons-png.freepik.com/256/17013/17013590.png?ga=GA1.1.943864788.1731188083&semt=ais_hybrid" alt="Casca de Banana" />
+      </div>
+      <div class="material" draggable="true" (dragstart)="startDrag('paper')">
+        <img src="https://img.freepik.com/fotos-premium/latas-de-aluminio-em-fundo-branco_1040193-6580.jpg?ga=GA1.1.943864788.1731188083&semt=ais_hybrid" alt="Revista" />
+      </div>
+    </div>
+  
+    <div class="bins">
+      <div class="bin" (drop)="onDrop('plastic')" (dragover)="allowDrop($event)">
+        Plástico
+      </div>
+      <div class="bin" (drop)="onDrop('organic')" (dragover)="allowDrop($event)">
+        Orgânico
+      </div>
+      <div class="bin" (drop)="onDrop('paper')" (dragover)="allowDrop($event)">
+        Metálico
+      </div>
+    </div>
+  
+    <p class="feedback" *ngIf="feedback">{{ feedback }}</p>
+  </div>
+  
