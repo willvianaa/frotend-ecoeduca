@@ -1,5 +1,6 @@
 import { Component, ChangeDetectorRef, AfterViewChecked } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 interface Postagem {
   id: number;
@@ -15,6 +16,7 @@ interface Postagem {
   selector: 'app-desafios-eco',
   templateUrl: './desafios-eco.component.html',
   styleUrls: ['./desafios-eco.component.css'],
+  standalone: false
 })
 export class DesafiosEcoComponent implements AfterViewChecked {
   postagens: Postagem[] = [];
@@ -24,6 +26,7 @@ export class DesafiosEcoComponent implements AfterViewChecked {
   imagemUrl: string = ''; // URL da imagem para visualização
 
   private imagemAtualizada: boolean = false; // Flag para controlar a atualização da imagem
+  router: any;
 
   constructor(private cdr: ChangeDetectorRef, private http: HttpClient) {}
 
@@ -120,4 +123,9 @@ export class DesafiosEcoComponent implements AfterViewChecked {
       }
     );
   }
-}
+
+  voltarParaHome(): void {
+    this.router.navigate(['/home']);  // Navegar para a página inicial
+  }
+  }
+

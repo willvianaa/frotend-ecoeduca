@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface UsuarioPontuacao {
   nome: string; // Nome do usuário
@@ -9,9 +10,13 @@ interface UsuarioPontuacao {
 @Component({
   selector: 'app-pontuacao',
   templateUrl: './pontuacao.component.html',
-  styleUrl: './pontuacao.component.css'
+  styleUrl: './pontuacao.component.css',
+  standalone: false
 })
 export class PontuacaoComponent {
+voltar() {
+throw new Error('Method not implemented.');
+}
   @Input() usuariosPontuacao = [
     { nome: 'Player 2', pontuacao: 38000 },
     { nome: 'Player 3', pontuacao: 32000 },
@@ -20,6 +25,13 @@ export class PontuacaoComponent {
     { nome: 'Player 6', pontuacao: 15000 },
     { nome: 'Player 7', pontuacao: 8000 },
   ];
+
+  constructor(private router: Router) {}
+
+  voltarParaHome() {
+    this.router.navigate(['/home']); // Certifique-se que a rota '/home' está definida no AppRoutingModule
+  }
+
 }
   
 

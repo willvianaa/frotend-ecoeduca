@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-anaeosdesafios',
   templateUrl: './anaeosdesafios.component.html',
-  styleUrl: './anaeosdesafios.component.css'
+  styleUrl: './anaeosdesafios.component.css',
+  standalone: false
 })
 export class AnaeosdesafiosComponent {
   historias = [

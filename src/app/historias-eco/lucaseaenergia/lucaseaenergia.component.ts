@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-lucaseaenergia',
   templateUrl: './lucaseaenergia.component.html',
-  styleUrl: './lucaseaenergia.component.css'
+  styleUrl: './lucaseaenergia.component.css',
+  standalone: false
 })
 export class LucaseaenergiaComponent {
   historias = [

@@ -1,36 +1,43 @@
 <div class="container">
-  <h1>Desafios Ecológicos</h1>
+  <header>
+    <h1>Desafios Ecológicos</h1>
+    <button class="btn-voltar" (click)="voltarParaHome()">Voltar para Home</button>
+  </header>
 
   <!-- Formulário para adicionar postagens -->
-  <div class="formulario">
+  <section class="formulario">
     <h2>Envie seu Desafio</h2>
-    <input type="text" placeholder="Seu nome" [(ngModel)]="nome" />
-    <textarea placeholder="Descrição do desafio" [(ngModel)]="descricao"></textarea>
+    <div class="input-group">
+      <input type="text" placeholder="Seu nome" [(ngModel)]="nome" />
+    </div>
+    <div class="input-group">
+      <textarea placeholder="Descrição do desafio" [(ngModel)]="descricao"></textarea>
+    </div>
+    <div class="input-group">
+      <input type="file" (change)="onImageSelected($event)" accept="image/*" />
+      <div *ngIf="imagem" class="preview">
+        <h4>Pré-visualização da imagem:</h4>
+        <img [src]="imagemUrl" alt="Imagem selecionada">
+      </div>
+    </div>
 
-    <!-- Upload da imagem -->
-    <input type="file" (change)="onImageSelected($event)" accept="image/*" />
-    <div *ngIf="imagem" class="preview">
-      <h4>Pré-visualização da imagem:</h4>
-      <img [src]="imagemUrl" alt="Imagem selecionada">  
-    </div>    
-
-    <button (click)="adicionarPostagem()">Enviar</button>
-  </div>
+    <button (click)="adicionarPostagem()" class="btn-enviar">Enviar</button>
+  </section>
 
   <!-- Feed de postagens -->
-  <div class="feed">
+  <section class="feed">
     <h2>Postagens</h2>
     <div *ngFor="let postagem of postagens" class="postagem">
-      <h3>{{ postagem.nome }}</h3>
-      <p>Data de Criação: {{ postagem.dataCriacao | date: 'dd/MM/yyyy HH:mm' }}</p>
-      <!-- <img *ngIf="postagem.imagem" [src]="'http://localhost:8080/imagens/' + postagem.imagem" alt="Imagem do desafio"> -->
-      <img [src]="'http://localhost:8080' + postagem.imagemUrl" alt="{{ postagem.nome }}" />
+      <div class="post-header">
+        <h3>{{ postagem.nome }}</h3>
+        <p class="data">{{ postagem.dataCriacao | date: 'dd/MM/yyyy HH:mm' }}</p>
+      </div>
+      <img [src]="'http://localhost:8080' + postagem.imagemUrl" alt="{{ postagem.nome }}" class="post-image" />
       <p>{{ postagem.descricao }}</p>
-      <span>Pontuação: {{ postagem.pontos }}</span>
+      <span class="pontos">Pontuação: {{ postagem.pontos }}</span>
 
       <div class="aviso">
         <h4>Aviso: Não esqueça de levar este desafio para a escola!</h4>
-        <p>Certifique-se de seguir as etapas abaixo:</p>
         <ul class="checklist">
           <li *ngFor="let item of postagem.checkList; let i = index">
             <input
@@ -41,8 +48,8 @@
             <label>{{ item.item }}</label>
           </li>
         </ul>
-        <button (click)="deletarPostagem(postagem.id)">Excluir</button>
+        <button (click)="deletarPostagem(postagem.id)" class="btn-deletar">Excluir</button>
       </div>
     </div>
-  </div>
+  </section>
 </div>

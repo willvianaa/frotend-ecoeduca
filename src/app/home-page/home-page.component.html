@@ -1,38 +1,72 @@
-
 <div class="homepage">
   <header class="header">
     <app-configuracoes></app-configuracoes>
     <h1 class="title">EcoEduca</h1>
-    <!-- foto de perfil -->
-    <a href="" class="profile">
-      <img src="data:image/png;base64,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" alt="perfil" class="profile-pic">
-    </a>
-    <!-- configurações da conta -->
+    <div class="user-icon">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/4290/4290443.png"
+        alt="Usuário"
+        class="icon"
+        (click)="abrirPerfilUsuario()"
+      />
+    </div>
   </header>
 
   <section class="sections">
-    <a routerLink="/mapa" class="card-mapa">
+    <a routerLink="/mapa" class="card card-mapa">
       <img src="https://img.icons8.com/color/48/000000/map.png" alt="Mapa de Coleta">
       <h3>Mapa de Coleta</h3>
-      <p class="desc">Descubra os pontos de coleta seletiva mais próximos da sua localização. Com o 'Mapa de Coleta', você pode encontrar locais seguros e organizados para destinar corretamente seus resíduos recicláveis.</p>
+      <p>Descubra os pontos de coleta seletiva mais próximos e contribua com o meio ambiente!</p>
     </a>
 
-    <a routerLink="/histórias" class="card-historias">
+    <a routerLink="/histórias" class="card card-historias">
       <img src="https://img.icons8.com/color/48/000000/book.png" alt="Histórias Ecológicas">
       <h3>Histórias Ecológicas</h3>
-      <p class="desc">Explore narrativas inspiradoras e educativas sobre sustentabilidade e preservação do meio ambiente. As 'Histórias Ecológicas' trazem lições valiosas para um mundo mais sustentável.</p>
+      <p>Leia narrativas inspiradoras sobre sustentabilidade e preservação ambiental.</p>
     </a>
 
-    <a routerLink="/reciclagem" class="card-rec">
+    <a routerLink="/reciclagem" class="card card-rec">
       <img src="https://img.icons8.com/?size=100&id=BgaP42GOHJwU&format=png&color=000000" alt="Reciclagem do Lixo">
       <h3>Reciclagem do Lixo</h3>
-      <p class="desc">Aprenda sobre os diferentes tipos de materiais recicláveis e como separá-los corretamente. Descubra a importância da reciclagem e seu impacto no meio ambiente.</p>
+      <p>Aprenda sobre materiais recicláveis e como separar resíduos corretamente.</p>
     </a>
 
-    <a routerLink="/desafios" class="card-desafios">
+    <a routerLink="/desafios" class="card card-desafios">
       <img src="https://img.icons8.com/color/48/000000/trophy.png" alt="Desafios Ecológicos">
       <h3>Desafios Ecológicos</h3>
-      <p class="desc">Teste seus conhecimentos sobre práticas sustentáveis e descarte correto de resíduos com desafios interativos. Complete tarefas e suba no ranking ecológico!</p>
+      <p>Participe de desafios interativos e suba no ranking ecológico!</p>
     </a>
   </section>
 </div>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Sobre o EcoEduca</h4>
+        <p>
+          EcoEduca é uma plataforma educativa que promove a sustentabilidade por
+          meio de conteúdo interativo e práticas ecológicas. Junte-se a nós para
+          transformar o mundo!
+        </p>
+      </div>
+      <div class="footer-section">
+        <h4>Links Úteis</h4>
+        <ul>
+          <li><a routerLink="/mapa">Mapa de Coleta</a></li>
+          <li><a routerLink="/histórias">Histórias Ecológicas</a></li>
+          <li><a routerLink="/reciclagem">Reciclagem</a></li>
+          <li><a routerLink="/desafios">Desafios</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contato</h4>
+        <p>Email: ecoeduca24&#64;gmail.com</p>
+        <p>Youtube: Ecoeduca</p>
+        <p><a href="https://instagram.com/ecoeduca" target="">Instagram</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>🌱 Juntos por um futuro mais verde! 🌿</p>
+    </div>
+  </footer>

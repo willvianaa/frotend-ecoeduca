@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HistoriasEcoComponent } from './historias-eco.component';
+import { LixeirafalanteComponent } from './lixeirafalante.component';
 
-describe('HistoriasEcoComponent', () => {
-  let component: HistoriasEcoComponent;
-  let fixture: ComponentFixture<HistoriasEcoComponent>;
+describe('LixeirafalanteComponent', () => {
+  let component: LixeirafalanteComponent;
+  let fixture: ComponentFixture<LixeirafalanteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HistoriasEcoComponent]
+      declarations: [LixeirafalanteComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HistoriasEcoComponent);
+    fixture = TestBed.createComponent(LixeirafalanteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

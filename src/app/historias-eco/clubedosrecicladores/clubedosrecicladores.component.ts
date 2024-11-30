@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-clubedosrecicladores',
   templateUrl: './clubedosrecicladores.component.html',
-  styleUrl: './clubedosrecicladores.component.css'
+  styleUrl: './clubedosrecicladores.component.css',
+  standalone: false
 })
 export class ClubedosrecicladoresComponent {
   historias = [

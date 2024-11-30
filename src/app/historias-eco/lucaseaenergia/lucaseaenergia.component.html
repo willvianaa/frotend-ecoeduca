@@ -6,8 +6,9 @@
       <p>{{ historias[historiaAtual].texto }}</p>
     </div>
     <div class="botoes">
+      <button routerLink="/ana-desafios">História Anterior</button>
       <button (click)="voltar()" [disabled]="historiaAtual === 0">Voltar</button>
       <button (click)="avancar()" [disabled]="historiaAtual === historias.length - 1">Avançar</button>
-      <button routerLink="/ana-desafios">História Anterior</button>
+      <button routerLink="/lixeira-falante">Próxima História</button>
     </div>
   </div>

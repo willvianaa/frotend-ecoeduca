@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-pedroeomar',
   templateUrl: './pedroeomar.component.html',
-  styleUrl: './pedroeomar.component.css'
+  styleUrl: './pedroeomar.component.css',
+  standalone: false
 })
 export class PedroeomarComponent {
   historias = [

@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-joaoealixeira-historia',
   templateUrl: './joaoealixeira-historia.component.html',
-  styleUrl: './joaoealixeira-historia.component.css'
+  styleUrl: './joaoealixeira-historia.component.css',
+  standalone: false
 })
 export class JoaoealixeiraHistoriaComponent {
   historias = [

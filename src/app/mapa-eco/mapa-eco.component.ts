@@ -6,7 +6,8 @@ declare var google: any;
 @Component({
   selector: 'app-mapa-eco',
   templateUrl: './mapa-eco.component.html',
-  styleUrls: ['./mapa-eco.component.css']
+  styleUrls: ['./mapa-eco.component.css'],
+  standalone: false
 })
 export class MapaEcoComponent implements OnInit {
   center: google.maps.LatLngLiteral = { lat: -8.0476, lng: -34.8770 }; // Exemplo: Recife

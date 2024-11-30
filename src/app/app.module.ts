@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -24,6 +24,14 @@ import { ConfiguracoesComponent } from './configuracoes/configuracoes.component'
 import { SegundaAtividadeComponent } from './segunda-atividade/segunda-atividade.component';
 import { TelaCadastroComponent } from './tela-cadastro/tela-cadastro.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { LixeirafalanteComponent } from './historias-eco/lixeirafalante/lixeirafalante.component';
+import { JornadadaguaComponent } from './historias-eco/jornadadagua/jornadadagua.component';
+import { RecicladorEstrelaComponent } from './historias-eco/reciclador-estrela/reciclador-estrela.component';
+import { JardimEsquecidoComponent } from './historias-eco/jardim-esquecido/jardim-esquecido.component';
+import { AuthService } from './auth.service';
+import { EcoeducaConfigComponent } from './configuracoes/ecoeduca-config/ecoeduca-config.component';
+import { SobreacontaComponent } from './configuracoes/sobreaconta/sobreaconta.component';
+import { UserProfileComponent } from './home-page/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +52,14 @@ import { GoogleMapsModule } from '@angular/google-maps';
     ConfiguracoesComponent,
     SegundaAtividadeComponent,
     TelaCadastroComponent,
+    LixeirafalanteComponent,
+    JornadadaguaComponent,
+    RecicladorEstrelaComponent,
+    JardimEsquecidoComponent,
+    EcoeducaConfigComponent,
+    SobreacontaComponent,
+    UserProfileComponent,
+  
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-historias-eco',
   templateUrl: './historias-eco.component.html',
-  styleUrl: './historias-eco.component.css'
+  styleUrl: './historias-eco.component.css',
+  standalone: false
 })
 export class HistoriasEcoComponent {
   constructor(private router: Router) {}
@@ -17,4 +18,3 @@ export class HistoriasEcoComponent {
     this.router.navigate(['/joaoealixeira']); // Exemplo de rota para leitura
   }
 }
-

@@ -15,10 +15,18 @@ import { LucaseaenergiaComponent } from './historias-eco/lucaseaenergia/lucaseae
 import { PontuacaoComponent } from './pontuacao/pontuacao.component';
 import { SegundaAtividadeComponent } from './segunda-atividade/segunda-atividade.component';
 import { TelaCadastroComponent } from './tela-cadastro/tela-cadastro.component';
+import { LixeirafalanteComponent } from './historias-eco/lixeirafalante/lixeirafalante.component';
+import { JornadadaguaComponent } from './historias-eco/jornadadagua/jornadadagua.component';
+import { JardimEsquecidoComponent } from './historias-eco/jardim-esquecido/jardim-esquecido.component';
+import { RecicladorEstrelaComponent } from './historias-eco/reciclador-estrela/reciclador-estrela.component';
+import { EcoeducaConfigComponent } from './configuracoes/ecoeduca-config/ecoeduca-config.component';
+import { SobreacontaComponent } from './configuracoes/sobreaconta/sobreaconta.component';
+import { UserProfileComponent } from './home-page/user-profile/user-profile.component';
 
 const routes: Routes = [
-  { path: 'home', component:  TelaLoginComponent}, // Rota inicial (login)
+  { path: '', component:  TelaLoginComponent}, // Rota inicial (login)
   { path: 'home', component: HomePageComponent},
+  { path: 'user-profile', component: UserProfileComponent},
   { path: 'histórias', component: HistoriasEcoComponent},
   { path: 'joaoealixeira', component: JoaoealixeiraHistoriaComponent},
   { path: 'cluberecicladores', component: ClubedosrecicladoresComponent},
@@ -26,13 +34,21 @@ const routes: Routes = [
   { path: 'ana-desafios', component: AnaeosdesafiosComponent},
   { path: 'pedro-mar', component: PedroeomarComponent},
   { path: 'lucas-energia', component: LucaseaenergiaComponent},
+  { path: 'lixeira-falante', component: LixeirafalanteComponent},
+  { path: 'jornada-agua', component: JornadadaguaComponent},
+  { path: 'reciclador-estrela', component: RecicladorEstrelaComponent},
+  { path: 'jardim-esquecido', component: JardimEsquecidoComponent},
   { path: 'mapa', component: MapaEcoComponent},
   { path: 'reciclagem', component: ReciclagemEcoComponent },
   { path: 'desafios', component: DesafiosEcoComponent },
   { path: 'pontuacao', component: PontuacaoComponent },
   { path: 'segunda-atividade', component: SegundaAtividadeComponent },
   { path: 'login', component: TelaCadastroComponent},
-  { path: '', redirectTo: '/pontuacao', pathMatch: 'full' }
+  { path: '', redirectTo: '/pontuacao', pathMatch: 'full' },
+  { path: 'ecoeduca-config', component: EcoeducaConfigComponent},
+  { path: 'sobre-conta', component: SobreacontaComponent},
+
+
 
 ];
 

@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-mariaeaarvore',
   templateUrl: './mariaeaarvore.component.html',
-  styleUrl: './mariaeaarvore.component.css'
+  styleUrl: './mariaeaarvore.component.css',
+  standalone: false
 })
 export class MariaeaarvoreComponent {
   historias = [
